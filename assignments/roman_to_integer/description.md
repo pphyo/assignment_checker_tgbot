@@ -2,7 +2,7 @@
 
 Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `C`, `D` and `M`. Given a roman numeral, convert it to an integer.
 
-**Examples:**
+*Examples:*
 
 - Input: `s = "III"` -> Output: `3`
 - Input: `s = "LVIII"` -> Output: `58`
@@ -10,18 +10,8 @@ Roman numerals are represented by seven different symbols: `I`, `V`, `X`, `L`, `
 
 ---
 
-**Instructions:**
+*Instructions:*
 
-1. Copy the code template below.
-2. Save it as `RomanToInteger.java`.
-3. Implement your logic inside the `convert` method. You can add more helper methods if you need.
-4. Submit the `RomanToInteger.java` file by replying to the assignment message.
-
-```java
-public class RomanToInteger {
-    public int convert(String roman) {
-        // TODO: Write your implementation here
-        return 0;
-    }
-}
-```
+1. Choose your preferred language.
+2. The bot will provide a code template.
+3. Implement your logic and submit the correct file.

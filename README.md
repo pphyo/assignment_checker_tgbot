@@ -1,6 +1,6 @@
-# Telegram Java Assignment Checker Bot
+# Assignment Checker Telegram Bot
 
-This project is a Telegram bot designed to automatically check and grade Java programming assignments submitted by students. It uses Docker to create a secure and isolated environment for compiling and running student code against predefined test cases.
+This project is a Telegram bot designed to automatically check and grade programming assignments in multiple languages (Java, Python, etc.). It uses Docker to create secure, isolated environments for compiling and running student code against predefined test cases.
 
 ## Server Setup Guide
 
@@ -16,7 +16,7 @@ This guide provides the necessary steps to deploy and run the bot on a new Linux
 
 ### Step 1: Update Server and Install Dependencies
 
-First, log into your server via SSH. Then, update the package lists and install essential software: Python, Pip (Python's package manager), Git, and Docker.
+Log into your server via SSH. Update packages and install essential software: Python, Pip, Git, and Docker.
 
 ```bash
 # Update package lists
@@ -32,7 +32,7 @@ sudo systemctl enable docker
 
 ### Step 2: Grant Docker Permissions
 
-By default, Docker requires `sudo` for every command. To run Docker commands without `sudo`, add your current user to the `docker` group.
+To run Docker commands without `sudo`, add your current user to the `docker` group.
 
 ```bash
 # Add your user to the docker group
@@ -42,33 +42,23 @@ sudo usermod -aG docker ${USER}
 exit
 ```
 
-After running the commands above, close your SSH session and log back in. You should now be able to run `docker ps` without `sudo`.
+After logging back in, verify by running `docker ps` without `sudo`.
 
 ### Step 3: Clone Your Project Repository
 
-Clone your bot's source code from your Git repository to the server.
+Clone your bot's source code from your Git repository.
 
 ```bash
 # Replace the URL with your actual repository URL
-git clone [https://github.com/pphyo/assignment_checker_tgbot.git](https://github.com/pphyo/assignment_checker_tgbot.git)
+git clone <repository-url>
 
 # Navigate into the project directory
-cd assignment_checker_tgbot/
+cd <repository-name>/
 ```
 
 ### Step 4: Install Python Libraries
 
-Install the required Python library (`python-telegram-bot`) using `pip`. It is best practice to use a `requirements.txt` file.
-
-First, create a `requirements.txt` file in your project directory:
-
-```bash
-# requirements.txt
-python-telegram-bot
-python-dotenv
-```
-
-Then, install the libraries from this file:
+Install the required Python libraries using the `requirements.txt` file.
 
 ```bash
 pip3 install -r requirements.txt
@@ -76,71 +66,58 @@ pip3 install -r requirements.txt
 
 ### Step 5: Configure the Bot
 
-Before running the bot, you need to set your Telegram Bot Token.
+The bot uses a `.env` file for secret credentials. This file is ignored by Git for security.
 
-1. **Edit the `bot.py` file:**
-    Open the `bot.py` file using a text editor like `nano` or `vim`.
+1. **Create a `.env` file:**
 
     ```bash
-    nano bot.py
+    nano .env
     ```
 
-2. **Update the Bot Token:**
-    Find the line `BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"` and replace the placeholder with your actual token from BotFather. Save and exit the editor (`Ctrl+X`, then `Y`, then `Enter` for nano).
+2. **Add your Bot Token to the file:**
+    Add the following line, replacing the placeholder with your token from BotFather.
 
-3. **Verify `assignments.json`:**
-    Ensure your `assignments.json` file is up-to-date with all the assignments you want to launch.
+    ```bash
+    BOT_TOKEN="YOUR_ACTUAL_BOT_TOKEN_HERE"
+    ```
 
-### Step 6: Build the Docker Image
+    Save and exit (`Ctrl+X`, `Y`, `Enter`).
 
-Build the Docker image that will be used to run the student's code. This command only needs to be run once.
+### Step 6: Build Docker Images
+
+Build the Docker images required for each programming language.
 
 ```bash
-# Make sure you are in the root directory of your project (where the Dockerfile is)
-docker build -t assignment-checker-env .
+# Build the Java environment
+docker build -f java.Dockerfile -t java-checker-env .
+
+# Build the Python environment
+docker build -f python.Dockerfile -t python-checker-env .
 ```
 
 ### Step 7: Run the Bot Persistently
 
-To ensure your bot keeps running even after you close your SSH session, you should use a terminal multiplexer like `tmux`.
+Use a terminal multiplexer like `tmux` to keep the bot running after you disconnect.
 
-1. **Install `tmux` (if not already installed):**
-
-    ```bash
-    sudo apt install -y tmux
-    ```
-
-2. **Start a new `tmux` session:**
-    Give your session a meaningful name, like `bot`.
+1. **Start a new `tmux` session:**
 
     ```bash
-    tmux new -s ac_bot
+    tmux new -s bot_session
     ```
 
-3. **Run the bot inside the `tmux` session:**
-    Now, you are inside a new terminal session. Start the bot as usual.
+2. **Run the bot inside the session:**
 
     ```bash
     python3 bot.py
     ```
 
-    You will see the "Bot starting..." messages. The bot is now running.
+3. **Detach from the session:**
+    Press **`Ctrl+B`**, then press **`D`**. Your bot is now running in the background.
 
-4. **Detach from the `tmux` session:**
-    You can now safely detach from this session, and it will keep running in the background. Press the following key combination:
-    **`Ctrl+B`** (release the keys), then press **`D`**.
+### Managing the Bot
 
-You can now close your SSH connection. Your bot will remain online.
-
-### Managing the Bot with `tmux`
-
-* **To re-attach to the session** (to view logs or stop the bot):
-
-    ```bash
-    tmux attach -t ac_bot
-    ```
-
-* **To stop the bot**, re-attach to the session and press `Ctrl+C`.
+* **To re-attach:** `tmux attach -t bot_session`
+* **To stop the bot:** Re-attach and press `Ctrl+C`.
 
 ---
 
@@ -149,22 +126,33 @@ You can now close your SSH connection. Your bot will remain online.
 ```bash
 .
 ├── assignments/
-│   ├── integer_to_roman/
-│   │   ├── description.md
-│   │   └── IntegerToRomanTestRunner.java
+│   ├── roman_to_integer/
+│   │   ├── java/
+│   │   │   ├── RomanToInteger.java      (Template)
+│   │   │   └── RomanToIntegerTestRunner.java
+│   │   ├── python/
+│   │   │   ├── RomanToInteger.py        (Template)
+│   │   │   └── roman_to_integer_runner.py
+│   │   └── description.md
 │   └── ... (other assignments)
-├── users/
-│   └── ... (user data will be created here)
+├── users/                  (Ignored by Git)
+├── .env                    (Ignored by Git)
+├── .gitignore
 ├── assignments.json
-├── .evn
 ├── bot.py
-├── Dockerfile
+├── Dockerfile              (For Java)
+├── python.Dockerfile       (For Python)
 └── requirements.txt
 ```
 
 ## How to Add a New Assignment
 
-1. Create a new sub-directory inside the `assignments/` folder (e.g., `assignments/new_assignment/`).
-2. Add your `TestRunner.java` file and `description.md` file into the new directory.
-3. Update the `assignments.json` file with a new entry for `new_assignment`.
-4. Restart the bot on the server (re-attach to the `tmux` session, stop with `Ctrl+C`, and run `python3 bot.py` again).
+1. Create a new directory in `assignments/` (e.g., `assignments/new_problem/`).
+2. Inside, create a `description.md` file.
+3. For each language you want to support (e.g., `java`, `python`):
+    * Create a sub-directory (e.g., `assignments/new_problem/java/`).
+    * Add the code template file (e.g., `NewProblem.java`).
+    * Add the test runner file (e.g., `NewProblemTestRunner.java`).
+4. Update `assignments.json` with the new assignment's configuration, including paths for all supported languages.
+5. If a new language requires a new environment, create a new `Dockerfile` and build its image on the server.
+6. Restart the bot on the server.

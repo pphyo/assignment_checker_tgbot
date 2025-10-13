@@ -33,18 +33,8 @@ Given an integer, convert it to a Roman numeral. Roman numerals are formed by co
 
 ---
 
-**Instructions:**
+*Instructions:*
 
-1. Copy the code template below.
-2. Save it as `IntegerToRoman.java`.
-3. Implement your logic inside the `convert` method.
-4. Submit the `IntegerToRoman.java` file by replying to the assignment message.
-
-```java
-public class IntegerToRoman {
-    public String convert(int num) {
-        // TODO: Write your implementation here
-        return "";
-    }
-}
-```
+1. Choose your preferred language.
+2. The bot will provide a code template.
+3. Implement your logic and submit the correct file.

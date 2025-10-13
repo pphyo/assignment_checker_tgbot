@@ -1,20 +1,56 @@
 {
     "roman_to_integer": {
         "name": "Assignment 1: Roman to Integer",
-        "file_name": "RomanToInteger.java",
-        "test_runner": "assignments/roman_to_integer/RomanToIntegerTestRunner.java",
-        "description_file": "assignments/roman_to_integer/description.md"
+        "description_file": "assignments/roman_to_integer/description.md",
+        "languages": {
+            "java": {
+                "file_name": "RomanToInteger.java",
+                "template_file": "assignments/roman_to_integer/java/RomanToInteger.java",
+                "test_runner": "assignments/roman_to_integer/java/RomanToIntegerTestRunner.java",
+                "docker_image": "java-checker-env"
+            },
+            "python": {
+                "file_name": "roman_to_integer.py",
+                "template_file": "assignments/roman_to_integer/python/roman_to_integer.py",
+                "test_runner": "assignments/roman_to_integer/python/roman_to_integer_test_runner.py",
+                "docker_image": "python-checker-env"
+            }
+        }
     },
     "two_sum": {
         "name": "Assignment 2: Two Sum",
-        "file_name": "TwoSum.java",
-        "test_runner": "assignments/two_sum/TwoSumTestRunner.java",
-        "description_file": "assignments/two_sum/description.md"
+        "description_file": "assignments/two_sum/description.md",
+        "languages": {
+            "java": {
+                "file_name": "TwoSum.java",
+                "template_file": "assignments/two_sum/java/TwoSum.java",
+                "test_runner": "assignments/two_sum/java/TwoSumTestRunner.java",
+                "docker_image": "java-checker-env"
+            },
+            "python": {
+                "file_name": "two_sum.py",
+                "template_file": "assignments/two_sum/python/two_sum.py",
+                "test_runner": "assignments/two_sum/python/two_sum_test_runner.py",
+                "docker_image": "python-checker-env"
+            }
+        }
     },
     "integer_to_roman": {
-        "name": "Assignment 3: Integer to Roman",
-        "file_name": "IntegerToRoman.java",
-        "test_runner": "assignments/integer_to_roman/IntegerToRomanTestRunner.java",
-        "description_file": "assignments/integer_to_roman/description.md"
+        "name": "Assignment 2: Integer to Roman",
+        "description_file": "assignments/integer_to_roman/description.md",
+        "languages": {
+            "java": {
+                "file_name": "IntegerToRoman.java",
+                "template_file": "assignments/integer_to_roman/java/IntegerToRoman.java",
+                "test_runner": "assignments/integer_to_roman/java/IntegerToRomanTestRunner.java",
+                "docker_image": "java-checker-env"
+            },
+            "python": {
+                "file_name": "integer_to_roman.py",
+                "template_file": "assignments/integer_to_roman/python/integer_to_roman.py",
+                "test_runner": "assignments/integer_to_roman/python/integer_to_roman_test_runner.py",
+                "docker_image": "python-checker-env"
+            }
+        }
     }
 }
