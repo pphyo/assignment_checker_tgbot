@@ -1,0 +1,29 @@
+# --- Environment Variables ---
+# Ignore the .env file containing secret credentials like the bot token.
+.env
+
+# --- User Generated Data ---
+# Ignore the entire 'users' directory, which contains student submissions,
+# CSV files, and other generated data. This should never be in the repository.
+users/
+
+# --- macOS Specific Files ---
+# Ignore the .DS_Store file which is automatically created by macOS Finder
+# in any directory that has been accessed.
+.DS_Store
+
+# --- Python Specific Files ---
+# Ignore Python's bytecode cache directory.
+__pycache__/
+
+# Ignore compiled Python files.
+*.pyc
+
+# Ignore virtual environment directories.
+# If you use a different name for your venv, add it here (e.g., env/).
+venv/
+.venv/
+
+# --- IDE/Editor Specific Files ---
+# Ignore Visual Studio Code settings directory.
+.vscode/

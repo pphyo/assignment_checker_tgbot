@@ -1,0 +1,20 @@
+{
+    "roman_to_integer": {
+        "name": "Assignment 1: Roman to Integer",
+        "file_name": "RomanToInteger.java",
+        "test_runner": "assignments/roman_to_integer/RomanToIntegerTestRunner.java",
+        "description_file": "assignments/roman_to_integer/description.md"
+    },
+    "two_sum": {
+        "name": "Assignment 2: Two Sum",
+        "file_name": "TwoSum.java",
+        "test_runner": "assignments/two_sum/TwoSumTestRunner.java",
+        "description_file": "assignments/two_sum/description.md"
+    },
+    "integer_to_roman": {
+        "name": "Assignment 3: Integer to Roman",
+        "file_name": "IntegerToRoman.java",
+        "test_runner": "assignments/integer_to_roman/IntegerToRomanTestRunner.java",
+        "description_file": "assignments/integer_to_roman/description.md"
+    }
+}
