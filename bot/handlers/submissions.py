@@ -5,7 +5,7 @@ import subprocess
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from bot.config import ASSIGNMENTS
+from bot import config
 from bot.utils.file_manager import get_user_data_path, initialize_user_csv, log_submission
 from bot.core.runner import run_in_docker
 
@@ -26,11 +26,11 @@ async def handle_submission(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 assignment_id, lang_key = parts[1], parts[2]
         except Exception: pass
 
-    if not assignment_id or not lang_key or assignment_id not in ASSIGNMENTS or lang_key not in ASSIGNMENTS[assignment_id]["languages"]:
+    if not assignment_id or not lang_key or assignment_id not in config.ASSIGNMENTS or lang_key not in config.ASSIGNMENTS[assignment_id]["languages"]:
         await update.message.reply_text("You did not reply to a valid submission message.")
         return
 
-    assignment = ASSIGNMENTS[assignment_id]
+    assignment = config.ASSIGNMENTS[assignment_id]
     lang_data = assignment["languages"][lang_key]
     submitted_file_name = update.message.document.file_name
 
@@ -41,18 +41,17 @@ async def handle_submission(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_path = get_user_data_path(update)
     initialize_user_csv(user_path)
     processing_message = await update.message.reply_text(f"Received `{submitted_file_name}`. Now checking...", parse_mode='Markdown')
-    submission_path = os.path.join(user_path, f"submission_{uuid.uuid4()}"); os.makedirs(submission_path)
+    submission_path = os.path.join(user_path, f"submission_{uuid.uuid4()}")
+    os.makedirs(submission_path)
 
     try:
         await (await context.bot.get_file(update.message.document.file_id)).download_to_drive(custom_path=os.path.join(submission_path, submitted_file_name))
         shutil.copy(lang_data["test_runner"], submission_path)
 
-        # Call the core runner
-        final_output, passed_count, total_tests, is_compile_error = run_in_docker(
+        final_output, passed_count, total_tests, is_compile_error = final_output, passed_count, total_tests, is_compile_error = run_in_docker(
             docker_image=lang_data["docker_image"],
             host_submission_path=os.path.abspath(submission_path),
-            lang_key=lang_key,
-            runner_file=os.path.basename(lang_data["test_runner"])
+            lang_data=lang_data
         )
 
         if is_compile_error:

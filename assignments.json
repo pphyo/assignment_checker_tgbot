@@ -7,13 +7,23 @@
                 "file_name": "RomanToInteger.java",
                 "template_file": "assignments/roman_to_integer/java/RomanToInteger.java",
                 "test_runner": "assignments/roman_to_integer/java/RomanToIntegerTestRunner.java",
-                "docker_image": "java-checker-env"
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
             },
             "python": {
                 "file_name": "roman_to_integer.py",
                 "template_file": "assignments/roman_to_integer/python/roman_to_integer.py",
                 "test_runner": "assignments/roman_to_integer/python/roman_to_integer_test_runner.py",
-                "docker_image": "python-checker-env"
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "roman_to_integer.js",
+                "template_file": "assignments/roman_to_integer/javascript/roman_to_integer.js",
+                "test_runner": "assignments/roman_to_integer/javascript/roman_to_integer_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
             }
         }
     },
@@ -25,13 +35,23 @@
                 "file_name": "TwoSum.java",
                 "template_file": "assignments/two_sum/java/TwoSum.java",
                 "test_runner": "assignments/two_sum/java/TwoSumTestRunner.java",
-                "docker_image": "java-checker-env"
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
             },
             "python": {
                 "file_name": "two_sum.py",
                 "template_file": "assignments/two_sum/python/two_sum.py",
                 "test_runner": "assignments/two_sum/python/two_sum_test_runner.py",
-                "docker_image": "python-checker-env"
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "two_sum.js",
+                "template_file": "assignments/two_sum/javascript/two_sum.js",
+                "test_runner": "assignments/two_sum/javascript/two_sum_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
             }
         }
     },
@@ -43,13 +63,23 @@
                 "file_name": "IntegerToRoman.java",
                 "template_file": "assignments/integer_to_roman/java/IntegerToRoman.java",
                 "test_runner": "assignments/integer_to_roman/java/IntegerToRomanTestRunner.java",
-                "docker_image": "java-checker-env"
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
             },
             "python": {
                 "file_name": "integer_to_roman.py",
                 "template_file": "assignments/integer_to_roman/python/integer_to_roman.py",
                 "test_runner": "assignments/integer_to_roman/python/integer_to_roman_test_runner.py",
-                "docker_image": "python-checker-env"
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "integer_to_roman.js",
+                "template_file": "assignments/integer_to_roman/javascript/integer_to_roman.js",
+                "test_runner": "assignments/integer_to_roman/javascript/integer_to_roman_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
             }
         }
     }

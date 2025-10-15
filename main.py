@@ -21,6 +21,7 @@ def main():
     """Sets up and runs the bot."""
 
     config.load_assignments()
+
     if not config.BOT_TOKEN:
         print("[CRITICAL] BOT_TOKEN not found in .env file. Exiting.")
         return
@@ -30,6 +31,7 @@ def main():
     os.makedirs(config.USERS_DIR, exist_ok=True)
 
     print("Building application...")
+
     application = Application.builder().token(config.BOT_TOKEN).post_init(post_init).build()
 
     application.add_handler(CommandHandler("start", commands.start_command))

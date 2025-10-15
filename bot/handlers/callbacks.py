@@ -2,14 +2,14 @@ import os
 from telegram import Update
 from telegram.ext import ContextTypes
 
-from bot.config import ASSIGNMENTS
+from bot import config
 
 async def language_choice_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
-    action, assignment_id, lang_key = query.data.split(':')
-    assignment = ASSIGNMENTS[assignment_id]
+    _, assignment_id, lang_key = query.data.split(':')
+    assignment = config.ASSIGNMENTS[assignment_id]
     lang_data = assignment["languages"][lang_key]
     template_path = lang_data.get("template_file")
 
