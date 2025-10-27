@@ -1,4 +1,4 @@
-*Assignment 2: Two Sum*
+*Two Sum*
 
 Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to `target`.
 
@@ -6,13 +6,15 @@ You may assume that each input would have exactly one solution, and you may not 
 
 *Examples:*
 
-- Input: `nums = [2,7,11,15]`, `target = 9` -> Output: `[0,1]`
-- Input: `nums = [3,2,4]`, `target = 6` -> Output: `[1,2]`
+➤ Input: `nums = [2,7,11,15]`, `target = 9` ➔ Output: `[0,1]`
+➤ Input: `nums = [3,2,4]`, `target = 6` ➔ Output: `[1,2]`
 
 ---
 
 *Instructions:*
 
 1. Choose your preferred language.
+
 2. The bot will provide a code template.
+
 3. Implement your logic and submit the correct file.

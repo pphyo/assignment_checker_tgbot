@@ -56,7 +56,7 @@
         }
     },
     "integer_to_roman": {
-        "name": "Assignment 2: Integer to Roman",
+        "name": "Assignment 3: Integer to Roman",
         "description_file": "assignments/integer_to_roman/description.md",
         "languages": {
             "java": {
@@ -78,6 +78,314 @@
                 "file_name": "integer_to_roman.js",
                 "template_file": "assignments/integer_to_roman/javascript/integer_to_roman.js",
                 "test_runner": "assignments/integer_to_roman/javascript/integer_to_roman_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "number_to_myanmar_word": {
+        "name": "Assignment 4: Number to Myanmar Word",
+        "description_file": "assignments/number_to_myanmar_word/description.md",
+        "languages": {
+            "java": {
+                "file_name": "NumberToMyanmarWord.java",
+                "template_file": "assignments/number_to_myanmar_word/java/NumberToMyanmarWord.java",
+                "test_runner": "assignments/number_to_myanmar_word/java/NumberToMyanmarWordTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "number_to_myanmar_word.py",
+                "template_file": "assignments/number_to_myanmar_word/python/number_to_myanmar_word.py",
+                "test_runner": "assignments/number_to_myanmar_word/python/number_to_myanmar_word_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "number_to_myanmar_word.js",
+                "template_file": "assignments/number_to_myanmar_word/javascript/number_to_myanmar_word.js",
+                "test_runner": "assignments/number_to_myanmar_word/javascript/number_to_myanmar_word_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "english_digit_to_myanmar_digit": {
+        "name": "Assignment 5: English Digit to Myanmar Digit",
+        "description_file": "assignments/english_digit_to_myanmar_digit/description.md",
+        "languages": {
+            "java": {
+                "file_name": "EnglishDigitToMyanmarDigit.java",
+                "template_file": "assignments/english_digit_to_myanmar_digit/java/EnglishDigitToMyanmarDigit.java",
+                "test_runner": "assignments/english_digit_to_myanmar_digit/java/EnglishDigitToMyanmarDigitTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "english_digit_to_myanmar_digit.py",
+                "template_file": "assignments/english_digit_to_myanmar_digit/python/english_digit_to_myanmar_digit.py",
+                "test_runner": "assignments/english_digit_to_myanmar_digit/python/english_digit_to_myanmar_digit_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "english_digit_to_myanmar_digit.js",
+                "template_file": "assignments/english_digit_to_myanmar_digit/javascript/english_digit_to_myanmar_digit.js",
+                "test_runner": "assignments/english_digit_to_myanmar_digit/javascript/english_digit_to_myanmar_digit_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "cash_counting": {
+        "name": "Assignment 6: Cash Counting",
+        "description_file": "assignments/cash_counting/description.md",
+        "languages": {
+            "java": {
+                "file_name": "CashCounting.java",
+                "template_file": "assignments/cash_counting/java/CashCounting.java",
+                "test_runner": "assignments/cash_counting/java/CashCountingTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "cash_counting.py",
+                "template_file": "assignments/cash_counting/python/cash_counting.py",
+                "test_runner": "assignments/cash_counting/python/cash_counting_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "cash_counting.js",
+                "template_file": "assignments/cash_counting/javascript/cash_counting.js",
+                "test_runner": "assignments/cash_counting/javascript/cash_counting_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "myanmar_digit_calculator": {
+        "name": "Assignment 7: Myanmar Digit Calculator",
+        "description_file": "assignments/myanmar_digit_calculator/description.md",
+        "languages": {
+            "java": {
+                "file_name": "MyanmarDigitCalculator.java",
+                "template_file": "assignments/myanmar_digit_calculator/java/MyanmarDigitCalculator.java",
+                "test_runner": "assignments/myanmar_digit_calculator/java/MyanmarDigitCalculatorTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "myanmar_digit_calculator.py",
+                "template_file": "assignments/myanmar_digit_calculator/python/myanmar_digit_calculator.py",
+                "test_runner": "assignments/myanmar_digit_calculator/python/myanmar_digit_calculator_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "myanmar_digit_calculator.js",
+                "template_file": "assignments/myanmar_digit_calculator/javascript/myanmar_digit_calculator.js",
+                "test_runner": "assignments/myanmar_digit_calculator/javascript/myanmar_digit_calculator_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "binary_art_converter": {
+        "name": "Assignment 8: Binary Art Converter",
+        "description_file": "assignments/binary_art_converter/description.md",
+        "languages": {
+            "java": {
+                "file_name": "BinaryArtConverter.java",
+                "template_file": "assignments/binary_art_converter/java/BinaryArtConverter.java",
+                "test_runner": "assignments/binary_art_converter/java/BinaryArtConverterTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "binary_art_converter.py",
+                "template_file": "assignments/binary_art_converter/python/binary_art_converter.py",
+                "test_runner": "assignments/binary_art_converter/python/binary_art_converter_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "binary_art_converter.js",
+                "template_file": "assignments/binary_art_converter/javascript/binary_art_converter.js",
+                "test_runner": "assignments/binary_art_converter/javascript/binary_art_converter_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "credit": {
+        "name": "Assignment 9: Credit Card Validator",
+        "description_file": "assignments/credit/description.md",
+        "languages": {
+            "java": {
+                "file_name": "Credit.java",
+                "template_file": "assignments/credit/java/Credit.java",
+                "test_runner": "assignments/credit/java/CreditTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "credit.py",
+                "template_file": "assignments/credit/python/credit.py",
+                "test_runner": "assignments/credit/python/credit_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "credit.js",
+                "template_file": "assignments/credit/javascript/credit.js",
+                "test_runner": "assignments/credit/javascript/credit_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "scrabble_score": {
+        "name": "Assignment 10: Scrabble Score Comparator",
+        "description_file": "assignments/scrabble_score/description.md",
+        "languages": {
+            "java": {
+                "file_name": "ScrabbleScore.java",
+                "template_file": "assignments/scrabble_score/java/ScrabbleScore.java",
+                "test_runner": "assignments/scrabble_score/java/ScrabbleScoreTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "scrabble_score.py",
+                "template_file": "assignments/scrabble_score/python/scrabble_score.py",
+                "test_runner": "assignments/scrabble_score/python/scrabble_score_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "scrabble_score.js",
+                "template_file": "assignments/scrabble_score/javascript/scrabble_score.js",
+                "test_runner": "assignments/scrabble_score/javascript/scrabble_score_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "caesar_cipher": {
+        "name": "Assignment 11: Caesar Cipher for Encoding Text",
+        "description_file": "assignments/caesar_cipher/description.md",
+        "languages": {
+            "java": {
+                "file_name": "CaesarCipher.java",
+                "template_file": "assignments/caesar_cipher/java/CaesarCipher.java",
+                "test_runner": "assignments/caesar_cipher/java/CaesarCipherTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "caesar_cipher.py",
+                "template_file": "assignments/caesar_cipher/python/caesar_cipher.py",
+                "test_runner": "assignments/caesar_cipher/python/caesar_cipher_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "caesar_cipher.js",
+                "template_file": "assignments/caesar_cipher/javascript/caesar_cipher.js",
+                "test_runner": "assignments/caesar_cipher/javascript/caesar_cipher_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "substitution": {
+        "name": "Assignment 12: Substitution",
+        "description_file": "assignments/substitution/description.md",
+        "languages": {
+            "java": {
+                "file_name": "Substitution.java",
+                "template_file": "assignments/substitution/java/Substitution.java",
+                "test_runner": "assignments/substitution/java/SubstitutionTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "substitution.py",
+                "template_file": "assignments/substitution/python/substitution.py",
+                "test_runner": "assignments/substitution/python/substitution_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "substitution.js",
+                "template_file": "assignments/substitution/javascript/substitution.js",
+                "test_runner": "assignments/substitution/javascript/substitution_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "readability": {
+        "name": "Assignment 13: Readability",
+        "description_file": "assignments/readability/description.md",
+        "languages": {
+            "java": {
+                "file_name": "Readability.java",
+                "template_file": "assignments/readability/java/Readability.java",
+                "test_runner": "assignments/readability/java/ReadabilityTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "readability.py",
+                "template_file": "assignments/readability/python/readability.py",
+                "test_runner": "assignments/readability/python/readability_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "readability.js",
+                "template_file": "assignments/readability/javascript/readability.js",
+                "test_runner": "assignments/readability/javascript/readability_test_runner.js",
+                "docker_image": "node-checker-env",
+                "run_command": "node {runner_file}"
+            }
+        }
+    },
+    "password_check": {
+        "name": "Assignment 14: Password Check",
+        "description_file": "assignments/password_check/description.md",
+        "languages": {
+            "java": {
+                "file_name": "PasswordCheck.java",
+                "template_file": "assignments/password_check/java/PasswordCheck.java",
+                "test_runner": "assignments/password_check/java/PasswordCheckTestRunner.java",
+                "docker_image": "java-checker-env",
+                "compile_command": "javac *.java",
+                "run_command": "java {runner_class_name}"
+            },
+            "python": {
+                "file_name": "password_check.py",
+                "template_file": "assignments/password_check/python/password_check.py",
+                "test_runner": "assignments/password_check/python/password_check_test_runner.py",
+                "docker_image": "python-checker-env",
+                "run_command": "python3 {runner_file}"
+            },
+            "javascript": {
+                "file_name": "password_check.js",
+                "template_file": "assignments/password_check/javascript/password_check.js",
+                "test_runner": "assignments/password_check/javascript/password_check_test_runner.js",
                 "docker_image": "node-checker-env",
                 "run_command": "node {runner_file}"
             }
