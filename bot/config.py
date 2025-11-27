@@ -2,9 +2,11 @@ import os
 import json
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_ID = os.getenv("ADMIN_ID")
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSIGNMENTS_CONFIG_FILE = os.path.join(PROJECT_ROOT, "assignments.json")

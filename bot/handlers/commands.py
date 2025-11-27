@@ -77,3 +77,17 @@ async def unknown_command_handler(update: Update, context: ContextTypes.DEFAULT_
         "/view <ID> - View details of a specific assignment\n"
         "/myresults - Check your submission history"
     )
+
+async def reload_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Reloads the assignments configuration without restarting the bot."""
+    user_id = str(update.effective_user.id)
+
+    if user_id != config.ADMIN_ID:
+        return
+
+    config.load_assignments()
+
+    await update.message.reply_text(
+        f"✅ Configuration reloaded successfully!\n"
+        f"Loaded {len(config.ASSIGNMENTS)} active assignments."
+    )
