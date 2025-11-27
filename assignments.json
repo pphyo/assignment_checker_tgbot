@@ -1,6 +1,7 @@
 {
     "roman_to_integer": {
-        "name": "Assignment 1: Roman to Integer",
+        "name": "Roman to Integer",
+        "active": true,
         "description_file": "assignments/roman_to_integer/description.md",
         "languages": {
             "java": {
@@ -28,7 +29,8 @@
         }
     },
     "two_sum": {
-        "name": "Assignment 2: Two Sum",
+        "name": "Two Sum",
+        "active": false,
         "description_file": "assignments/two_sum/description.md",
         "languages": {
             "java": {
@@ -56,7 +58,8 @@
         }
     },
     "integer_to_roman": {
-        "name": "Assignment 3: Integer to Roman",
+        "name": "Integer to Roman",
+        "active": false,
         "description_file": "assignments/integer_to_roman/description.md",
         "languages": {
             "java": {
@@ -84,7 +87,8 @@
         }
     },
     "number_to_myanmar_word": {
-        "name": "Assignment 4: Number to Myanmar Word",
+        "name": "Number to Myanmar Word",
+        "active": false,
         "description_file": "assignments/number_to_myanmar_word/description.md",
         "languages": {
             "java": {
@@ -112,7 +116,8 @@
         }
     },
     "english_digit_to_myanmar_digit": {
-        "name": "Assignment 5: English Digit to Myanmar Digit",
+        "name": "English Digit to Myanmar Digit",
+        "active": false,
         "description_file": "assignments/english_digit_to_myanmar_digit/description.md",
         "languages": {
             "java": {
@@ -140,7 +145,8 @@
         }
     },
     "cash_counting": {
-        "name": "Assignment 6: Cash Counting",
+        "name": "Cash Counting",
+        "active": false,
         "description_file": "assignments/cash_counting/description.md",
         "languages": {
             "java": {
@@ -168,7 +174,8 @@
         }
     },
     "myanmar_digit_calculator": {
-        "name": "Assignment 7: Myanmar Digit Calculator",
+        "name": "Myanmar Digit Calculator",
+        "active": false,
         "description_file": "assignments/myanmar_digit_calculator/description.md",
         "languages": {
             "java": {
@@ -196,7 +203,8 @@
         }
     },
     "binary_art_converter": {
-        "name": "Assignment 8: Binary Art Converter",
+        "name": "Binary Art Converter",
+        "active": false,
         "description_file": "assignments/binary_art_converter/description.md",
         "languages": {
             "java": {
@@ -224,7 +232,8 @@
         }
     },
     "credit": {
-        "name": "Assignment 9: Credit Card Validator",
+        "name": "Credit Card Validator",
+        "active": false,
         "description_file": "assignments/credit/description.md",
         "languages": {
             "java": {
@@ -252,7 +261,8 @@
         }
     },
     "scrabble_score": {
-        "name": "Assignment 10: Scrabble Score Comparator",
+        "name": "Scrabble Score Comparator",
+        "active": false,
         "description_file": "assignments/scrabble_score/description.md",
         "languages": {
             "java": {
@@ -280,7 +290,8 @@
         }
     },
     "caesar_cipher": {
-        "name": "Assignment 11: Caesar Cipher for Encoding Text",
+        "name": "Caesar Cipher for Encoding Text",
+        "active": false,
         "description_file": "assignments/caesar_cipher/description.md",
         "languages": {
             "java": {
@@ -308,7 +319,8 @@
         }
     },
     "substitution": {
-        "name": "Assignment 12: Substitution",
+        "name": "Substitution",
+        "active": false,
         "description_file": "assignments/substitution/description.md",
         "languages": {
             "java": {
@@ -336,7 +348,8 @@
         }
     },
     "readability": {
-        "name": "Assignment 13: Readability",
+        "name": "Readability",
+        "active": false,
         "description_file": "assignments/readability/description.md",
         "languages": {
             "java": {
@@ -364,7 +377,8 @@
         }
     },
     "password_check": {
-        "name": "Assignment 14: Password Check",
+        "name": "Password Check",
+        "active": false,
         "description_file": "assignments/password_check/description.md",
         "languages": {
             "java": {
