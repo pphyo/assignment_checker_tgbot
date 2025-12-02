@@ -39,6 +39,7 @@ def main():
     application.add_handler(CommandHandler("view", commands.view_command))
     application.add_handler(CommandHandler("myresults", commands.myresults_command))
     application.add_handler(CommandHandler("reload", commands.reload_command))
+    application.add_handler(CommandHandler("export", commands.export_scores_command))
     application.add_handler(CallbackQueryHandler(callbacks.language_choice_callback))
     application.add_handler(MessageHandler(filters.Document.ALL & filters.REPLY, submissions.handle_submission))
     application.add_handler(MessageHandler(filters.COMMAND, commands.unknown_command_handler))

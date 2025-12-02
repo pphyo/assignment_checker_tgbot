@@ -28,3 +28,42 @@ def log_submission(user_path: str, assignment_name: str, language: str, status: 
     with open(csv_path, mode='a', newline='') as f:
         writer = csv.writer(f)
         writer.writerow([timestamp, assignment_name, language, status, score])
+
+def compile_all_submissions(output_file="master_report.csv"):
+    """
+    Walks through all user folders, collects submissions, and writes to a master CSV.
+    Returns the path to the created master file or None if no data found.
+    """
+    all_rows = []
+
+    header = ["UserIdentifier", "Timestamp", "Assignment", "Language", "Status", "Score"]
+
+    if not os.path.exists(USERS_DIR):
+        return None
+
+    for user_id in os.listdir(USERS_DIR):
+        user_path = os.path.join(USERS_DIR, user_id)
+
+        if os.path.isdir(user_path):
+            csv_path = os.path.join(user_path, "submissions.csv")
+
+            if os.path.exists(csv_path):
+                try:
+                    with open(csv_path, mode='r', encoding='utf-8') as f:
+                        reader = csv.reader(f)
+                        next(reader, None)
+
+                        for row in reader:
+                            all_rows.append([user_id] + row)
+                except Exception as e:
+                    print(f"[ERROR] Reading CSV for {user_id}: {e}")
+
+    if not all_rows:
+        return None
+
+    with open(output_file, mode='w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+        writer.writerows(all_rows)
+
+    return output_file

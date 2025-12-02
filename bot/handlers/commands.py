@@ -1,7 +1,9 @@
+from datetime import datetime
 import os
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 
+from bot.utils.file_manager import compile_all_submissions
 from bot import config
 from bot.utils.file_manager import get_user_data_path
 import csv
@@ -82,7 +84,10 @@ async def reload_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Reloads the assignments configuration without restarting the bot."""
     user_id = str(update.effective_user.id)
 
+    print(f"DEBUG: Attempting reload. User ID: {user_id}. Expected Admin ID: {config.ADMIN_ID}")
+
     if user_id != config.ADMIN_ID:
+        await update.message.reply_text("⛔️ Unauthorized. Your ID does not match the Admin ID.") 
         return
 
     config.load_assignments()
@@ -91,3 +96,26 @@ async def reload_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"✅ Configuration reloaded successfully!\n"
         f"Loaded {len(config.ASSIGNMENTS)} active assignments."
     )
+
+async def export_scores_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    """Admin command to download all student scores as a CSV file."""
+    user_id = str(update.effective_user.id)
+
+    if user_id != config.ADMIN_ID:
+        await update.message.reply_text("⛔️ Unauthorized access.")
+        return
+
+    await update.message.reply_text("🔄 Compiling all scores... Please wait.")
+
+    report_file = compile_all_submissions()
+
+    if report_file and os.path.exists(report_file):
+        await update.message.reply_document(
+            document=open(report_file, 'rb'),
+            filename=f"All_Scores_{datetime.now().strftime('%Y%m%d')}.csv",
+            caption="📊 Here is the consolidated score report."
+        )
+
+        os.remove(report_file)
+    else:
+        await update.message.reply_text("⚠️ No submission data found yet.")

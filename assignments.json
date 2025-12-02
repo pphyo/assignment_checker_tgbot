@@ -30,7 +30,7 @@
     },
     "two_sum": {
         "name": "Two Sum",
-        "active": false,
+        "active": true,
         "description_file": "assignments/two_sum/description.md",
         "languages": {
             "java": {
