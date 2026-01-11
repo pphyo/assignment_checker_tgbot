@@ -16,7 +16,7 @@ Write a function that takes a non-negative integer amount (representing Kyat) an
   ➤ Input `70`: 1x50 (rem 20) ➔ 1x15 (rem 5) ➔ 1x5 (rem 0) = **3 notes**
   ➤ Input `63`: 1x50 (rem 13) ➔ 0x15 ➔ 1x10 (rem 3) ➔ 0x5 ➔ 3x1 (rem 0) = **5 notes**
   ➤ Input `47`: 0x50 ➔ 3x15 (rem 2) ➔ 0x10 ➔ 0x5 ➔ 2x1 (rem 0) = **5 notes** *(Your example output 6 seems incorrect with a greedy approach)*
-➤ Input: `268` ➔ Output: `5` (1x200 + 1x50 + 1x15 + 0x10 + 0x5 + 3x1)
+➤ Input: `268` ➔ Output: `6` (1x200 + 1x50 + 1x15 + 0x10 + 0x5 + 3x1)
 ➤ Input: `0` ➔ Output: `0`
 
 ---
