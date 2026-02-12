@@ -30,7 +30,7 @@
     },
     "two_sum": {
         "name": "Two Sum",
-        "active": false,
+        "active": true,
         "description_file": "assignments/two_sum/description.md",
         "languages": {
             "java": {
@@ -59,7 +59,7 @@
     },
     "integer_to_roman": {
         "name": "Integer to Roman",
-        "active": false,
+        "active": true,
         "description_file": "assignments/integer_to_roman/description.md",
         "languages": {
             "java": {
@@ -88,7 +88,7 @@
     },
     "number_to_myanmar_word": {
         "name": "Number to Myanmar Word",
-        "active": false,
+        "active": true,
         "description_file": "assignments/number_to_myanmar_word/description.md",
         "languages": {
             "java": {
@@ -117,7 +117,7 @@
     },
     "english_digit_to_myanmar_digit": {
         "name": "English Digit to Myanmar Digit",
-        "active": false,
+        "active": true,
         "description_file": "assignments/english_digit_to_myanmar_digit/description.md",
         "languages": {
             "java": {
@@ -175,7 +175,7 @@
     },
     "myanmar_digit_calculator": {
         "name": "Myanmar Digit Calculator",
-        "active": false,
+        "active": true,
         "description_file": "assignments/myanmar_digit_calculator/description.md",
         "languages": {
             "java": {
@@ -204,7 +204,7 @@
     },
     "binary_art_converter": {
         "name": "Binary Art Converter",
-        "active": false,
+        "active": true,
         "description_file": "assignments/binary_art_converter/description.md",
         "languages": {
             "java": {
