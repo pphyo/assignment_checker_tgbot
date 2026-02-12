@@ -95,7 +95,7 @@ docker build -f java.Dockerfile -t java-checker-env .
 docker build -f python.Dockerfile -t python-checker-env .
 ```
 
-### Step 7: Run the Bot Persistently
+### Step 7(A): Run the Bot Persistently
 
 Use a terminal multiplexer like `tmux` to keep the bot running after you disconnect.
 
@@ -113,6 +113,15 @@ Use a terminal multiplexer like `tmux` to keep the bot running after you disconn
 
 3. **Detach from the session:**
     Press **`Ctrl+B`**, then press **`D`**. Your bot is now running in the background.
+
+### Step 7(B): Run the Bot with auto start when OS boot up
+
+1. copy the bot_autostart.service to /etc/systemd/system/
+2. sudo systemctl daemon-reload
+3. sudo systemctl enable bot_autostart.service
+4. sudo systemctl start bot_autostart.service
+5. If you edit the bot_autostart.service, then edit the file
+6. And do the step 2, 3, 4
 
 ### Managing the Bot
 

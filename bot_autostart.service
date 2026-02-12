@@ -1,0 +1,21 @@
+[Unit]
+Description=Start Full Stack Assignment Checker Bot in Tmux
+After=network.target docker.service
+
+[Service]
+Type=forking
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/opt/the-fullstack-developer
+
+ExecStartPre=-/usr/bin/tmux kill-session -t bot_session
+
+ExecStart=/usr/bin/tmux new-session -d -s bot_session
+ExecStartPost=/usr/bin/tmux send-keys -t bot_session "python3 main.py" C-m
+
+ExecStop=/usr/bin/tmux kill-session -t bot_session
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
