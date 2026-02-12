@@ -12,16 +12,19 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Hello!\n\nThis is Codoverse.\n\nType /assignments to see the assignment list, or /myresults to check your history.")
 
 async def assignments_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    if not config.ASSIGNMENTS:
-        await update.message.reply_text("There are currently no assignments available.")
+    """Lists ONLY ACTIVE assignments for students."""
+
+    active_list = []
+    for key, data in config.ASSIGNMENTS.items():
+        if data.get('active', True) is True:
+            active_list.append(f"📝 *{key}*: {data['name']}")
+
+    if not active_list:
+        await update.message.reply_text("There are currently no active assignments.")
         return
 
-    message = "📄 **Available Assignments:**\n\n"
-
-    for key, data in config.ASSIGNMENTS.items():
-        message += f"🔹 **{data['name']}** (ID: `{key}`)\n"
-    message += "\nTo view details, use the `/view <ID>` command.\nExample: `/view roman_to_integer`"
-
+    message = "📚 *Available Assignments:*\n\n" + "\n".join(active_list)
+    message += "\n\nUse `/view <id>` to see details."
     await update.message.reply_text(message, parse_mode='Markdown')
 
 async def view_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -87,7 +90,7 @@ async def reload_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f"DEBUG: Attempting reload. User ID: {user_id}. Expected Admin ID: {config.ADMIN_ID}")
 
     if user_id != config.ADMIN_ID:
-        await update.message.reply_text("⛔️ Unauthorized. Your ID does not match the Admin ID.") 
+        await update.message.reply_text("⛔️ Unauthorized. Your ID does not match the Admin ID.")
         return
 
     config.load_assignments()

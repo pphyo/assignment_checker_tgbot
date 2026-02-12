@@ -146,7 +146,7 @@
     },
     "cash_counting": {
         "name": "Cash Counting",
-        "active": false,
+        "active": true,
         "description_file": "assignments/cash_counting/description.md",
         "languages": {
             "java": {

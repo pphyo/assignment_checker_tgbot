@@ -15,31 +15,36 @@ USERS_DIR = os.path.join(PROJECT_ROOT, "users")
 ASSIGNMENTS = {}
 
 def load_assignments():
-    """Load ONLY ACTIVE assignments from the global JSON config file."""
+    """Load ALL assignments (Active & Inactive) so Admin can manage them."""
     global ASSIGNMENTS
     print(f"Loading assignments from '{ASSIGNMENTS_CONFIG_FILE}'...")
     ASSIGNMENTS.clear()
 
     if not os.path.exists(ASSIGNMENTS_CONFIG_FILE):
-        print(f"  - [ERROR] Global config file '{ASSIGNMENTS_CONFIG_FILE}' not found.")
+        print(f"  - [ERROR] File not found.")
         return
 
     try:
         with open(ASSIGNMENTS_CONFIG_FILE, 'r') as f:
-            all_assignments_data = json.load(f)
+            all_data = json.load(f)
 
-        active_assignments = {}
-        for key, data in all_assignments_data.items():
+        # ⚠️ အရင်ကလို if active: ဆိုပြီး မစစ်တော့ပါဘူး။
+        # Admin က အကုန်မြင်ရဖို့ အကုန်ထည့်လိုက်ပါမယ်။
+        ASSIGNMENTS.update(all_data) 
 
-            if data.get("active", True):
-                active_assignments[key] = data
-                print(f"    - Loaded ACTIVE assignment: {data['name']}")
-            else:
-                print(f"    - Skipping INACTIVE assignment: {data.get('name', key)}")
-
-        ASSIGNMENTS.update(active_assignments)
-        print(f"  - Successfully loaded {len(ASSIGNMENTS)} active assignments.")
+        print(f"  - Successfully loaded {len(ASSIGNMENTS)} assignments (Active & Inactive).")
 
     except Exception as e:
         print(f"  - [ERROR] Failed to load assignments: {e}")
         ASSIGNMENTS.clear()
+
+def save_assignments():
+    """Saves the current in-memory ASSIGNMENTS to the JSON file."""
+    try:
+        with open(ASSIGNMENTS_CONFIG_FILE, 'w') as f:
+            json.dump(ASSIGNMENTS, f, indent=4)
+        print("✅ Assignments configuration saved to disk.")
+        # Reload to ensure consistency
+        load_assignments()
+    except Exception as e:
+        print(f"❌ Failed to save assignments: {e}")
